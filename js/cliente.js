@@ -1,4 +1,5 @@
 var url = "https://script.google.com/macros/s/AKfycbwtld-cH7wdVbi1WdBARp7x7rwC0tasX6wD8d4zm_QlMaLJ3FkGFTjjQPQ1nq2BcKq2HQ/exec";
+var urlVentas = "https://script.google.com/macros/s/AKfycbzRU9oR7lrsNW_LsXddTU9yzNyPHHxEfti1EmYwlqF39n4bz8zOZ1fCyR2-nUEkJbZOQg/exec";
 var productos =[];
 var carrito = [];
 // Nombres de las imágenes guardadas en la carpeta IMG
@@ -315,18 +316,32 @@ formulario.addEventListener("submit", function(evento) {
         estado: "Pendiente"
     };
 
-    ventas.push(pedido);
+   
+ventas.push(pedido);
 
-    try {
-        localStorage.setItem(
-            "ventasPasteleria",
-            JSON.stringify(ventas)
-        );
-    } catch (error) {
-        mensajePedido.textContent =
-            "No se pudo guardar el pedido en este navegador.";
-        return;
-    }
+try {
+    localStorage.setItem(
+        "ventasPasteleria",
+        JSON.stringify(ventas)
+    );
+} catch (error) {
+    mensajePedido.textContent =
+        "No se pudo guardar el pedido en este navegador.";
+    return;
+}
+
+fetch(urlVentas, {
+    method: "POST",
+    body: JSON.stringify(pedido)
+})
+.then(function(respuesta) {
+    console.log("Respuesta del envío:", respuesta);
+})
+.catch(function(error) {
+    console.error("Error al enviar la venta:", error);
+});
+
+
 
     mensajePedido.textContent =
         "¡Pedido registrado correctamente! Total: $" +
