@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inicio de sesión | Mi Pastelería</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="js/script.js" defer></script>
+    <script src="js/login.js" defer></script>
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <div class="logo">
+            <img src="img/pasteles.png" alt="Logo de la pastelería">
+            <span>Mi Pastelería</span>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="bienvenida">
+            <h1>Bienvenido a Mi Pastelería</h1>
+            <p>Inicia sesión para ingresar al sistema.</p>
+        </section>
+
+        <section class="formulario-pedido">
+            <h2>Iniciar sesión</h2>
+
+            <form id="formLogin">
+                <label for="usuario">Usuario</label>
+                <input
+                    type="text"
+                    id="usuario"
+                    name="usuario"
+                    placeholder="Escribe tu usuario"
+                    required
+                >
+
+                <label for="contrasena">Contraseña</label>
+                <input
+                    type="password"
+                    id="contrasena"
+                    name="contrasena"
+                    placeholder="Escribe tu contraseña"
+                    required
+                >
+
+                <button type="submit">Ingresar</button>
+
+                <p id="mensajeLogin" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="pie">
+        © <span id="anio"></span> Mi Pastelería
+    </footer>
+
+</body>
+</html>
+```

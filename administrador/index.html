@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administrador | Pastelería</title>
+
+    <!-- Estilos compartidos -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Funciones del administrador -->
+    <script src="../js/administrador.js" defer></script>
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <div class="logo">
+            <img src="../img/pasteles.png"
+                 alt="Logo de la pastelería">
+            <span>Mi Pastelería</span>
+        </div>
+
+        <nav class="menu">
+            <a href="../index.html">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+
+        <section class="bienvenida">
+            <h1>Panel de Administrador</h1>
+            <p>Bienvenida, Mabel Sauceda.</p>
+            <p>Consulta las ventas registradas de la pastelería.</p>
+        </section>
+
+        <!-- Resumen de ventas -->
+        <section class="tarjetas">
+
+            <article class="tarjeta">
+                <h2>Total de ventas</h2>
+                <p class="numero" id="totalVentas">0</p>
+            </article>
+
+            <article class="tarjeta">
+                <h2>Total vendido</h2>
+                <p class="numero" id="totalDinero">$0.00</p>
+            </article>
+
+        </section>
+
+        <!-- Tabla de ventas -->
+        <section>
+            <h2>Ventas registradas</h2>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cliente</th>
+                            <th>Cantidad</th>
+                            <th>Correo</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tablaVentas">
+                        <tr>
+                            <td colspan="4">
+                                No hay ventas registradas.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        © <span id="anio"></span> Mi Pastelería
+    </footer>
+
+    <!-- Funciones generales -->
+    <script src="../js/script.js" defer></script>
+
+</body>
+</html>

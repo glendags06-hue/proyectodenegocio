@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Catálogo | Mi Pastelería</title>
+
+    <!-- Estilos compartidos -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Funciones generales -->
+    <script src="../js/script.js" defer></script>
+
+    <!-- Funciones del catálogo y carrito -->
+    <script src="../js/cliente.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header class="encabezado">
+        <div class="logo">
+            <img src="../img/pasteles.png"
+                 alt="Logo de la pastelería">
+            <span>Mi Pastelería</span>
+        </div>
+
+        <nav class="menu">
+            <a href="#catalogo">Pasteles</a>
+            <a href="#carrito">Mi carrito</a>
+            <a href="../index.html">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+
+        <!-- Bienvenida -->
+        <section class="bienvenida">
+            <h1>Endulza tu día</h1>
+            <p>
+                Descubre nuestros pasteles y elige tus favoritos.
+            </p>
+        </section>
+
+        <!-- Catálogo de productos -->
+        <section id="catalogo">
+            <h2>Nuestros pasteles</h2>
+
+            <p>
+                Selecciona tus productos y agrégalos al carrito.
+            </p>
+
+            <!-- Filtros -->
+            <div class="filtros-inventario">
+                <label for="filtroPrecioCliente">
+                    Precio máximo:
+                </label>
+
+                <input
+                    type="number"
+                    id="filtroPrecioCliente"
+                    min="0"
+                    step="0.01"
+                    placeholder="Ej. 300"
+                >
+
+                <button type="button" id="btnFiltrarPrecioCliente">
+                    Filtrar por precio
+                </button>
+
+                <button type="button" id="btnMostrarDisponibles">
+                    Mostrar disponibles
+                </button>
+
+                <button type="button" id="btnMostrarCatalogo">
+                    Mostrar todos
+                </button>
+            </div>
+
+            <!-- Los productos y sus imágenes se generan con JavaScript -->
+            <div class="catalogo-productos" id="listaProductos">
+            </div>
+        </section>
+
+        <!-- Carrito -->
+        <section id="carrito" class="seccion-carrito">
+            <h2>Mi carrito</h2>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pastel</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Subtotal</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tablaCarrito">
+                        <tr>
+                            <td colspan="5">
+                                Tu carrito está vacío.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="resumen-carrito">
+                <h3>
+                    Total:
+                    <span id="totalCarrito">$0.00</span>
+                </h3>
+            </div>
+        </section>
+
+        <!-- Datos del cliente -->
+        <section class="formulario-pedido">
+            <h2>Datos del pedido</h2>
+
+            <p>
+                Completa tus datos para registrar tu pedido.
+            </p>
+
+            <form id="formPedido">
+
+                <label for="nombreCliente">
+                    Nombre completo
+                </label>
+
+                <input
+                    type="text"
+                    id="nombreCliente"
+                    name="nombreCliente"
+                    placeholder="Escribe tu nombre"
+                    required
+                    maxlength="100"
+                >
+
+                <label for="correoCliente">
+                    Correo electrónico
+                </label>
+
+                <input
+                    type="email"
+                    id="correoCliente"
+                    name="correoCliente"
+                    placeholder="ejemplo@correo.com"
+                    required
+                    maxlength="150"
+                >
+
+                <label for="observaciones">
+                    Notas del pedido (opcional)
+                </label>
+
+                <textarea
+                    id="observaciones"
+                    name="observaciones"
+                    rows="3"
+                    maxlength="500"
+                    placeholder="Ej. Decoración o mensaje especial"
+                ></textarea>
+
+                <button type="submit">
+                    Registrar pedido
+                </button>
+
+                <p
+                    id="mensajePedido"
+                    role="status"
+                    style="display:block; margin-top:15px; color:green; font-weight:bold;"
+                ></p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="pie">
+        © <span id="anio"></span> Mi Pastelería
+    </footer>
+
+</body>
+</html>

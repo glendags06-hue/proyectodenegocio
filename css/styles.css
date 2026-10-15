@@ -1,0 +1,412 @@
+
+/* ESTILOS GENERALES DE LA PASTELERIA */
+
+:root {
+    --rosa: #f8dde3;
+    --rosa-fuerte: #d9859b;
+    --crema: #fff7ed;
+    --cafe: #8b5e50;
+    --texto: #493832;
+    --blanco: #ffffff;
+    --borde: #ead8d0;
+    --verde: #d8ead7;
+    --rojo: #f6d4d1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--crema);
+    color: var(--texto);
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    color: var(--cafe);
+    margin-bottom: 15px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+a {
+    color: var(--cafe);
+    text-decoration: none;
+}
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+button, .btn {
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    padding: 11px 18px;
+    background: var(--rosa-fuerte);
+    color: var(--blanco);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover, .btn:hover {
+    background: var(--cafe);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px;
+    border: 1px solid var(--borde);
+    border-radius: 9px;
+    background: var(--blanco);
+    color: var(--texto);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--rosa-fuerte);
+    border-color: transparent;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.contenedor {
+    width: min(1100px, 92%);
+    margin: 30px auto;
+}
+
+.encabezado {
+    background: var(--blanco);
+    padding: 20px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 3px solid var(--rosa);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--cafe);
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.menu {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    padding: 10px 14px;
+    border-radius: 8px;
+}
+
+.menu a:hover {
+    background: var(--rosa);
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit, minmax(200px, 1fr)
+    );
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.tarjeta {
+    background: var(--blanco);
+    padding: 22px;
+    border-radius: 15px;
+    border: 1px solid var(--borde);
+    box-shadow: 0 4px 12px #8b5e5010;
+}
+
+.numero {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--rosa-fuerte);
+    margin-top: 10px;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+    background: var(--blanco);
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--borde);
+}
+
+th {
+    background: var(--rosa);
+    color: var(--cafe);
+}
+
+tr:hover td {
+    background: #fffaf8;
+}
+
+.estado {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.estado-ok {
+    background: var(--verde);
+}
+
+.estado-bajo {
+    background: var(--rojo);
+}
+
+.formulario {
+    background: var(--blanco);
+    width: min(450px, 92%);
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px #8b5e5015;
+}
+
+.formulario h1, .formulario p {
+    text-align: center;
+}
+
+.formulario button {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.mensaje {
+    margin: 12px 0;
+    padding: 12px;
+    border-radius: 8px;
+    display: none;
+}
+
+.mensaje.visible {
+    display: block;
+    background: var(--rosa);
+}
+
+.producto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.pie {
+    text-align: center;
+    padding: 25px;
+    color: var(--cafe);
+}
+
+@media (max-width: 600px) {
+    .encabezado {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    .contenedor {
+        margin: 20px auto;
+    }
+
+    .formulario {
+        padding: 22px;
+        margin: 30px auto;
+    }
+}
+
+/* PANEL DEL ADMINISTRADOR */
+
+.bienvenida {
+    background: var(--rosa);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.bienvenida h1 {
+    margin-bottom: 10px;
+}
+
+.bienvenida p {
+    margin-top: 5px;
+}
+
+.tarjeta h2 {
+    font-size: 18px;
+}
+
+.tarjeta .numero {
+    font-size: 30px;
+}
+
+.tabla-contenedor table {
+    min-width: 550px;
+}
+
+.tabla-contenedor td {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    .bienvenida {
+        padding: 18px;
+    }
+
+    .tarjeta .numero {
+        font-size: 25px;
+    }
+}
+
+/* CATALOGO DE PASTELES */
+
+.catalogo-productos {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(220px, 1fr)
+    );
+    gap: 22px;
+    margin: 25px 0 40px;
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.producto h3 {
+    margin: 0;
+}
+
+.producto p {
+    margin: 0;
+}
+
+.producto .precio-producto {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--rosa-fuerte);
+    margin-top: auto;
+}
+
+.producto button {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.seccion-carrito,
+.formulario-pedido {
+    margin-top: 40px;
+}
+
+.resumen-carrito {
+    background: var(--rosa);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: right;
+    margin: 20px 0;
+}
+
+.resumen-carrito h3 {
+    margin: 0;
+}
+
+.formulario-pedido {
+    background: var(--blanco);
+    padding: 25px;
+    border: 1px solid var(--borde);
+    border-radius: 15px;
+}
+
+.formulario-pedido form {
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.formulario-pedido textarea {
+    resize: vertical;
+}
+
+#tablaCarrito button {
+    padding: 7px 11px;
+    margin: 3px;
+}
+
+@media (max-width: 600px) {
+    .catalogo-productos {
+        grid-template-columns: 1fr;
+    }
+
+    .formulario-pedido {
+        padding: 18px;
+    }
+
+    .resumen-carrito {
+        text-align: left;
+    }
+}
+.producto .imagen-producto {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.catalogo-productos .producto {
+    overflow: hidden;
+}
+
+.producto .precio-producto {
+    font-weight: bold;
+}
+
+.producto .disponibilidad-producto {
+    font-size: 0.95rem;
+}
